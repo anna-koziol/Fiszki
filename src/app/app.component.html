@@ -1,0 +1,13 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<div id="banner">Fiszki</div>
+<div id="body">
+  <h2>Zostało Ci <span class="sl">{{ilosc}}</span> słówek </h2>
+  <div id="eng" (click)="show()" *ngIf="pl; else templateName" class="black">{{activeEng}}</div>
+
+  <ng-template #templateName>
+    <div id="eng" (click)="show()" class="red">{{activeEng}}</div>
+  </ng-template>
+
+  <router-outlet></router-outlet>
+</div>
